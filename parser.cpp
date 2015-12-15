@@ -19,6 +19,11 @@ Parser::Parser(Lexer* _lex)
 	tok_map.insert(std::make_pair<int, std::string>(tok_char, "char"));
 
 
+	binOpPrecedence.insert(std::make_pair<char, int>('+', 10));
+	binOpPrecedence.insert(std::make_pair<char, int>('-', 20));
+	binOpPrecedence.insert(std::make_pair<char, int>('*', 30));
+	binOpPrecedence.insert(std::make_pair<char, int>('/', 40));
+
 	INF_LOG(PARSER_DEBUG, "--> add root to AST.\n");
 };
 
